@@ -281,7 +281,7 @@ public class ExportEncryptedPrivateKeyTool {
 
     // Encrypt AES key with the encryption public key using RSAES-OAEP.
     PublicKey publicKey = readPublicKey(encryptionPublicKey);
-    Cipher rsaesOaepCipher = Cipher.getInstance("RSA/NONE/OAEPWithSHA1AndMGF1Padding");
+    Cipher rsaesOaepCipher = Cipher.getInstance("RSA/NONE/OAEPWithSHA1AndMGF1Padding", new BouncyCastleProvider());
     rsaesOaepCipher.init(Cipher.ENCRYPT_MODE, publicKey);
     byte[] encryptedAesKey = rsaesOaepCipher.doFinal(randomAesKey.getEncoded());
 
