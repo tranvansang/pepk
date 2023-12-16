@@ -1,0 +1,19 @@
+plugins {
+	id 'java'
+}
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src'
+		}
+	}
+}
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'com.google.wireless.android.vending.developer.signing.tools.extern.export.ExportEncryptedPrivateKeyTool'
+	}
+	archiveBaseName = 'pepk'
+	archiveVersion =  '0.0.1'
+}
